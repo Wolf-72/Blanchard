@@ -1,0 +1,1535 @@
+:root {
+  --black-shade-color: #000000;
+  --black-hb-color: rgba(0, 0, 0, 0.5);
+  --black-color: #333333;
+  --gray-shade-color: #666666;
+  --gray-color:#999999;
+  --gray-light-color: #CACACA;
+  --gray-lighter-color: #ECECEC;
+  --purple-shade-color: #7943A4;
+  --purple-color: #9D5CD0;
+  --purple-light-color: #C283F3;
+  --purple-lighter-color: #D1A9F0;
+  --green-color: #30BF39;
+  --blue-color: #26A5E4;
+  --red-color: #D11616;
+  --white-color: #ffffff;
+}
+
+@media (max-width: 1320px) {
+  .header__list_top {
+    min-width: 690px;
+  }
+  .header__list_bottom {
+    min-width: 790px;
+  }
+  .about__container {
+    padding: 80px 190px 70px 15px;
+  }
+  .catalog__accordion-content {
+    grid-template-columns: 50% 50%;
+  }
+  .catalog__artist-btn_udine, .catalog__artist-btn_paolo {
+    grid-column: 2/3;
+  } 
+  .catalog__desc-empty {
+    width: 225px;
+  }
+  .events__article {
+    padding-top: 235px;
+    width: 99%;
+  }
+  .events__wrap {
+    padding: 13px 0px 40px 15px;
+  } 
+  .swiper-btn-right, 
+  .swiper-btn-left {
+    top: 32%;
+  }
+  .swiper-btn-right svg, 
+  .swiper-btn-left svg {
+    width: 35px;
+    height: 35px;
+  }
+  .swiper-btn-right {
+    right: 5px;
+  }
+  .swiper-btn-left {
+    left: 5px;
+  }
+  .events__subtitle_5 {
+    min-width: 361px;
+  }
+  .projects__text {
+    width: 100%;
+  }
+  .contacts__wrap-form {
+    width: 50%;
+  }
+  .contacts__input-name, 
+  .contacts__input-phone {
+    width: 240px;
+  }
+  .contacts__thanks-wrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}   
+  
+
+@media (max-width: 1100px) {
+  .header__container_top {
+    justify-content: space-between;
+    min-height: 100px;
+  }  
+  .header__container_top picture {
+    margin: 0 auto;
+    padding-right: 71px;
+    padding-top: 3px;
+  }
+  .header__btn-burger {
+    display: flex;
+    margin-left: 35px;    
+  }
+  .open-burger .header__burger-line:first-child {    
+    left: 0;
+    top: 50%;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out;
+  } /* класс open-burger д.б. добавлен в header */
+  .open-burger .header__burger-line:nth-child(2) {    
+    opacity: 0;    
+  }
+  .open-burger .header__burger-line:last-child {   
+    width: 36px;
+    bottom: auto;
+    left: 0;
+    top: 50%;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    transition:  transform 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out, width 0.3s ease-in-out;
+  } 
+  .header__nav_top {    
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 97px;
+    background-color: var(--black-shade-color);
+    padding: 48px 50px;
+    flex-direction: column;
+    z-index: 5;
+    overflow-y: auto;
+    visibility: hidden;
+    transform: translateX(-120%);
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  .header__list_top {
+    flex-direction: column;
+    min-height: 488px;
+  }
+  .header__item-top {
+    margin-bottom: 30px;
+  }
+  .open-burger .header__nav_top {
+    visibility: visible;
+    transform: none;
+  } 
+  .header__link-enter {    
+    width: 245px;
+    height: 60px;
+    padding: 15.5px 85px;
+    border: 2px solid var(--purple-color);
+    border-radius: 100px;
+  }  
+  .graph-modal__container {
+    margin-top: 7px;
+  }
+  .enter-modal {
+    width: 650px;
+    height: 650px;
+  }
+  .header__wrap-bottom {
+    display: none;
+  }
+  .header__search-wrap {
+    top: 30px;
+    margin-right: 35px;
+    background-color: var(--black-shade-color);
+    height: 45px;
+    padding-bottom: 5px;
+  }
+  .header__btn-search {
+    margin-right: -1px;
+    padding-top: 1px;
+  }
+  .header__btn-search svg {
+    width: 30px;
+    height: 30px;
+  }
+  .header__input-search {
+    width: 218px;
+    margin-right: 24px;
+    margin-left: 10px;
+  }
+  @keyframes open {
+    0% {
+      display: flex;
+      opacity: 0;
+      visibility: hidden;  
+      transform: translateX(-50px)    
+    }
+    100% {
+      display: flex;
+      opacity: 1;
+      visibility: visible; 
+      transform: translateX(0px)     
+    }
+  }
+  .header__form-search {
+    visibility: hidden;
+    opacity: 0;
+    display: none;    
+  }
+  .menu-search-open {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    margin-right: 30px;
+    transform: translateX(-50px); 
+    animation-name: open;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+  }
+  .hero__content {
+    padding-top: 10px;
+    padding-left: 35px;
+  }
+  .hero__title {
+    margin-bottom: -11px;
+  }
+  .hero__desc {
+    width: 660px;
+    margin-bottom: 157px;
+  }
+  .mySwiper-1 {
+    height: 768px;
+  }
+  .swiper-slide-1 {
+    background-image: url(../img/hero/hero-1024-1.jpg);
+  }
+  .swiper-slide-2 {
+    background-image: url(../img/hero/hero-1024-2.jpg);
+  }
+  .swiper-slide-3 {
+    background-image: url(../img/hero/hero-1024-3.jpg);
+  }
+  .about__container {
+    padding: 80px 45px 70px 50px;
+  }
+  .galery {
+    background-image: url("../img/galery/bgi-1024.jpg");
+  }
+  .galery__container {
+    padding: 80px 45px 80px 50px;
+  }
+  .galery__wrap-chose {
+    width: 30%;
+  }
+  .galery__checkbox {
+    padding-bottom: 35px;
+  } 
+  .mySwiper-2 {
+    height: 315px;
+  }
+  .galery__wrap-swiper {
+    width: 64.5%;
+  }
+  .swiper-button-prev {
+    left: 3px;
+  }
+  .swiper-pagination {
+    left: 41px;
+  }
+  .swiper-button-next {
+    left: 103px;
+  }
+  .galery-modal {
+    width: 564px;
+    height: 558px;
+  }
+  .galery-modal__picture {
+    width: 264px;
+  }
+  .galery-modal__content {
+    width: 330px;    
+    padding: 51px 50px;
+  }
+  .galery-modal__span {
+    margin-bottom: 30px;
+  }
+  .catalog__container {
+    padding: 80px 50px;
+  }
+  .catalog__desc {
+    width: 100%;
+    margin-bottom: 38px;
+  }
+  .catalog__subtitle {
+    margin-bottom: 7px;
+  }  
+  .catalog__list-artist {
+    width: 50%;
+  } 
+  .catalog__picture-empty {
+    width: 173px;
+    height: 114px;
+    margin: 5px;
+    margin-left: 11px;
+    outline: 2px solid var(--gray-color);
+    outline-offset: 8px;
+  }
+  .catalog__content-empty {
+    margin-left: 25px;
+  }
+  .ui-accordion .ui-accordion-content {
+    padding-top: 27px;
+  }
+  .catalog__accordion-content {
+    grid-template-columns: 58% 42%;
+  }
+  .catalog__artist-btn_gozzoli {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .catalog__artist-btn_bergognone {
+    grid-row: 2;
+  }
+  .catalog__artist-btn_granacci {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .catalog__artist-btn_bissolo {
+    grid-row: 3;
+  }
+  .catalog__artist-btn_cekko {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .catalog__artist-btn_boltraffio,
+  .catalog__artist-btn_udine {
+    grid-row: 4;
+  }
+  .catalog__artist-btn_bonsignori {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .catalog__artist-btn_paolo {
+    grid-row: 5;
+  }
+  .catalog__artist-btn_botticini {
+    grid-row: 6;
+  }
+  .catalog__artist-btn_giorgione {
+    grid-row: 6;
+  }
+  .catalog__artist-btn_bramantino {
+    column-rule-color: 1;
+    grid-row: 7;
+  }
+  .catalog__artist-btn_parentino {
+    grid-column: 2;
+    grid-row: 7;
+  }
+  .catalog__artist-btn_brea {
+    grid-row: 8;
+  }
+  .catalog__artist-btn_pesellino {
+    grid-column: 2;
+    grid-row: 8;
+  }
+  .catalog__artist-btn_tucci {
+    grid-column: 1;
+    grid-row: 9;
+  }
+  .catalog__artist-btn_perugino {
+    grid-column: 2;
+    grid-row: 9;
+  }
+  .catalog__artist-btn_vekkietta {
+    grid-column: 1;
+    grid-row: 10;
+  }
+  .catalog__artist-btn_peruzzi {
+    grid-row: 10;
+  }
+  .catalog__artist-btn_verrorio {
+    grid-column: 1;
+    grid-row: 11;
+  }
+  .catalog__artist-btn_pisanello  {
+    grid-column: 2;
+    grid-row: 11;    
+  }
+  .events__container {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 121px;
+  }
+  .swiper-btn-right,
+  .swiper-btn-left {
+    display: none;
+  }
+  .events__article {
+    padding-top: 195px;
+    max-width: 290px;
+    width: 100%;
+  }
+  .events__wrap {
+    min-height: 486px;
+    padding: 18px 30px 46px 33px;
+  }
+  .events__desc {
+    margin-bottom: 4px;
+  }
+  .events__wrap .events__desc {
+    text-align: right;
+    margin-left: auto;
+  }
+  .events__subtitle {
+    width: 110%;
+    margin-bottom: 8px;
+  }
+  .events__subtitle_5 {
+    min-width: 100%;
+  }
+  .events__text {
+    width: 102%;
+    margin-bottom: 22px;
+  }
+  .mySwiper-3 {
+    height: 683px;
+  }
+  .swiper-btn-bullet {
+    z-index: 10;
+  }
+  .swiper-pagination-bullet {    
+    display: inline-block;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    margin-bottom: 67px;
+  }
+  .projects__container {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 79px;
+  }
+  .projects__swiper {
+    padding-left: 53px;
+    padding-right: 53px;
+  }
+  .projects__text {
+    margin-bottom: 19px;
+  }
+  .swiper-btn-next, 
+  .swiper-btn-prev {
+    top: 38%;
+  }
+  .tippy-box {
+    width: 240px;
+  }
+  .tippy-arrow {
+    color: transparent;
+  }
+  .projects__btn-tooltip::after {
+    content: url("../img/projects/tooltip-icon-cruz.svg");
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    bottom: 4px;
+    margin-left: -8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-in-out;
+  } /* изменение восклицательного знака на крест в круге на кнопке тултипа */
+
+  .projects__btn-tooltip:focus-visible:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  .projects__btn-tooltip:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  .contacts__container {
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    padding: 43px 50px 39px 50px;
+  }   
+  .contacts__desc-address {
+    font-size: 14px;
+    line-height: 41px;
+  }
+  .contacts__wrap-form {
+    width: 100%;    
+    margin-left: 0;
+    padding-top: 9px;
+  }
+  .contacts__form {
+    justify-content: space-between;
+  }  
+  .contacts__input-name, 
+  .contacts__input-phone {
+    width: 270px;
+    margin-right: 0;
+  }
+  .contacts__btn {
+    width: 344px;
+  }  
+  .contacts__wrap-contact {
+    padding-top: 21px;
+    margin-left: 0;
+  }
+  .contacts__wrapper-social {
+    padding-top: 7px;
+}
+
+
+
+
+  #up-top {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .catalog__accordion-content {
+    grid-template-columns: 54% 46%;
+  }
+  .catalog__picture-empty {
+    height: 100%;
+  }
+  .mySwiper-3 {
+    height: 745px;
+  }
+  .events__wrap {
+    min-height: 545px;
+  }
+  .events__text {
+    width: 110%;
+  }
+  .contacts__form {
+    justify-content: start;
+  }
+  .contacts__input-name {
+    margin-right: 20px;
+  }
+  .contacts__btn {
+    margin: 0;
+  }
+}
+
+@media (max-width: 910px) {  
+  .header__nav_top {
+    overflow-x: hidden;
+  }
+  .enter-modal {
+    width: 590px;
+    height: 570px;
+    padding: 20px 20px 20px 30px;
+  }
+  .enter-modal__subtitle {
+    margin-top: 12px;
+    font-size: 40px;
+  }
+  .enter-modal__text {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .enter-modal__link {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .enter-modal__input-login,
+  .enter-modal__input-password {
+    width: 460px;
+    height: 60px;
+    font-size: 16px;
+  }
+  .enter-modal__input-login::placeholder,
+  .enter-modal__input-password::placeholder {    
+    font-size: 16px;
+    line-height: 20px;    
+  }
+  .enter-modal__btn-form {
+    height: 55px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .header__search-wrap {
+    height: 50px;
+    padding-bottom: 10px;
+    margin-right: 15px;
+    top: 25px;
+  }
+  .header__btn-search {
+    margin-right: 19px;
+    padding-top: 7px;
+  }
+  .header__btn-search svg {
+    width: 27px;
+    height: 27px;
+  }
+  .header__form-search {
+    width: 650px;   
+    padding-top: 5px; 
+  }
+  .menu-search-open {
+    margin-right: 0;
+  }
+  .header__input-search {
+    width: 593px;
+  }
+  .swiper-slide-1 {
+    background-image: url(../img/hero/hero-768-1.jpg);
+  }
+  .swiper-slide-2 {
+    background-image: url(../img/hero/hero-768-2.jpg);
+  }
+  .swiper-slide-3 {
+    background-image: url(../img/hero/hero-768-3.jpg);
+  }
+  .about__container {
+    padding: 80px 45px 70px 48px;
+  }
+  .galery {
+    background-image: url("../img/galery/bgi-768.jpg");
+  }
+  .galery__container {
+    flex-direction: column;
+    padding: 80px 45px 80px 49px;
+  }
+  .galery__wrap-chose {
+    width: 41.5%;
+  }
+  .choices {
+    margin-bottom: 40px;
+  }
+  .choices__list--dropdown, .choices__list[aria-expanded] {
+    background-color: var(--black-shade-color);
+  }
+  .galery__checkbox {
+    padding-bottom: 0;
+  }
+  .galery__wrap-swiper {
+    width: 100%;
+    padding-top: 100px;
+  }
+  .mySwiper-2 {
+    height: 330px;
+  }
+  .swiper-button-prev {
+    left: 0;
+    top: 55px;
+  }
+  .swiper-pagination {
+    left: 39px;
+    top: 40px;
+  }
+  .swiper-button-next {
+    left: 100px;
+    top: 55px;
+  }
+  .galery-modal {
+    width: 668px;
+    height: 594px;
+  }
+  .galery-modal__picture {
+    width: 301px;
+  }
+  .galery-modal__content {
+    width: 367px;    
+    padding: 51px 50px;
+  }
+  .galery-modal__span {
+    margin-bottom: 50px;
+  }
+  .catalog__title {
+    padding-left: 1px;
+  }
+  .catalog__desc {
+    margin-bottom: 19px;
+  }
+  .catalog__wrap {
+    flex-direction: column-reverse;     
+  }
+  .catalog__list-artist {
+    width: 100%;
+    min-height: 730px;
+  }
+  .catalog__image {
+    margin-bottom: 17px;
+  }
+  .catalog__text {
+    padding-top: 6px;
+  }
+  .catalog__list-accordion {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .catalog__accordion-content {
+    grid-template-columns: 39% 32% 29%;      
+  }
+  .catalog__artist-btn_pinturikkio {
+    grid-column: 3;
+    grid-row: 6;
+  }
+  .catalog__artist-btn_pisanello {
+    grid-column: 3;
+    grid-row: 5;
+  }
+  .catalog__artist-btn_peruzzi {
+    grid-column: 3;
+    grid-row: 4;
+  }
+  .catalog__artist-btn_perugino {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  .catalog__artist-btn_pesellino {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .catalog__artist-btn_parentino {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .catalog__artist-btn_giorgione {
+    grid-row: 9;
+  }
+  .catalog__artist-btn_paolo {
+    grid-row: 8;
+  }
+  .catalog__artist-btn_udine {
+    grid-row: 7;
+  }
+  .catalog__artist-btn_cekko {    
+    grid-row: 6;
+  }
+  .catalog__artist-btn_granacci {
+    grid-row: 5;
+  }
+  .catalog__artist-btn_gozzoli {
+    grid-row: 4;
+  }
+  .catalog__artist-btn_girlandallo {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .catalog__artist-btn_vekkietta {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .catalog__artist-btn_verrorio {
+    grid-column: 2;
+    grid-row: 2;
+  }  
+  .catalog__picture-empty {
+    position: relative;
+    height: 114px;
+  }
+  .catalog__picture-empty .catalog__image {
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .catalog__desc-empty {
+    width: 275px;
+  }
+  .events__container {
+    padding-right: 49px;
+    padding-bottom: 58px;
+  }
+  .events__title {
+    margin-bottom: 19px;
+    line-height: 59px;
+  }
+  .events__article {
+    max-width: 319px;
+  }
+  .events__wrap {
+    min-height: 485px;
+    padding-right: 17px;
+    padding-bottom: 44px;
+  }
+  .events__subtitle {
+    width: 95%;
+    margin-bottom: 5px;
+  }
+  .events__text {
+    width: 96%;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    margin-bottom: 67px;
+  }
+  .projects__container {
+    padding-bottom: 80px;
+  }
+  .projects__text {
+    margin-bottom: 28px;
+  }
+  .projects__subtitle {
+    margin-bottom: 29px;
+  }
+  .swiper-btn-next, .swiper-btn-prev {
+    top: 36%;
+  }  
+  .contacts__container {
+    padding-left: 48px;
+  }
+  .contacts__form-name,
+  .contacts__form-phone {
+    width: 48%;
+    margin-bottom: 11px;
+  }
+  .contacts__form-name {
+    margin-right: 21px;
+  }
+  .contacts__input-name,
+  .contacts__input-phone {    
+    width: 100%;
+  }
+  .contacts__btn {
+    width: 47%;
+    padding: 13px 8px;
+  }
+  .contacts__wrap-contact {
+    padding-top: 30px;    
+  }
+  
+}
+
+@media (max-width: 740px) {  
+  .header__form-search {
+    width: 390px;
+  }
+  .enter-modal {
+    width: 550px;
+  }
+  .hero__container {
+    display: flex;
+    justify-content: center;    
+  }
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    padding-left: 0;
+    padding-top: 0;
+  }
+  .hero__title {
+    width: 400px;
+    margin-bottom: 16px;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+  }
+  .hero__desc {
+    width: 450px;
+    margin-bottom: 100px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .hero__link {
+    padding: 18px 30px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .galery__wrap-chose {
+    width: 55%;
+  }
+  .catalog__container {
+    padding: 50px 50px;
+  }
+  .catalog__list-artist {
+    min-height: 700px;
+  }
+  .catalog__text {
+    margin-bottom: 0;
+  }
+  .catalog__accordion-content {
+    grid-template-columns: 50% 50%;
+  }
+  .catalog__artist-btn_parentino {
+    grid-column: 1;
+    grid-row: 10;
+  }
+  .catalog__artist-btn_pesellino {
+    grid-column: 2;
+    grid-row: 10;
+  }
+  .catalog__artist-btn_perugino {
+    grid-column: 1;
+    grid-row: 11;
+  }
+  .catalog__artist-btn_peruzzi {
+    grid-column: 2;
+    grid-row: 11;
+  }
+  .catalog__artist-btn_pisanello {
+    grid-column: 1;
+    grid-row: 12;
+  }
+  .catalog__artist-btn_pinturikkio {
+    grid-column: 2;
+    grid-row: 12;
+  }
+  .mySwiper-3 {
+    height: 760px;
+  }
+  .events__container {
+    padding-bottom: 80px;
+  }
+  .events__article {
+    padding-top: 180px;
+  }
+  .events__wrap {
+    min-height: 571px;
+    padding-left: 17px;
+    padding-bottom: 30px;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    margin-bottom: 40px;
+  }
+  .projects__text {
+    width: 98%;
+  }
+  .projects__swiper {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  .swiper-btn-next, 
+  .swiper-btn-prev {
+    top: 32%;
+  }
+  .contacts__form-name,
+  .contacts__form-phone {
+    width: 47%;
+  }  
+  .contacts__btn {
+    width: 60%;
+  }
+
+}
+
+@media (max-width: 610px) {
+  .enter-modal {
+    width: 450px;
+    height: 520px;
+  }
+  .enter-modal__btn-closed {
+    right: 30px;
+  }
+  .enter-modal__btn-closed svg {
+    width: 24px;
+    height: 24px;
+  }
+  .enter-modal__subtitle {    
+    font-size: 30px;
+  }
+  .enter-modal__text {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .enter-modal__link {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .enter-modal__input-login, 
+  .enter-modal__input-password {
+    width: 390px;    
+    padding-bottom: 5px;
+    font-size: 14px;
+  }
+  .enter-modal__input-login::placeholder,
+  .enter-modal__input-password::placeholder {    
+    font-size: 14px;
+    line-height: 14px;    
+  }
+  .enter-modal__btn-form {   
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .enter-modal__social-text {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .enter-modal__social-link svg {
+    width: 25px;
+    height: 25px;
+  }  
+  .catalog__title-empty {
+    font-size: 22px;
+  }
+  .catalog__desc-empty {
+    width: 200px;
+  }
+  .events__container {
+    padding-bottom: 40px;
+  }
+  .mySwiper-3 {
+    height: 770px;
+  }
+  .events__article {
+    padding-top: 140px;
+  }
+  .events__wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .events__desc_5 {
+    width: 175px;
+  }
+  .events__subtitle {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .events__text {
+    line-height: 28px;
+  }
+  .swiper-btn-next, 
+  .swiper-btn-prev {
+    top: 28%;
+  }  
+  .contacts__form-name,
+  .contacts__form-phone {
+    width: 100%;
+    margin-right: 0;
+  }
+  .contacts__input-name {
+    margin-right: 0;
+  }
+  .contacts__span {
+    display: none;
+  }
+  .contacts__thanks-wrap {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .contacts__thanks-thank,
+  .contacts__thanks-text {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 510px) {
+  .header__container_top {
+    min-height: 45px;    
+  } 
+  .header__container_top picture {   
+    padding-right: 26px;
+    padding-top: 4px;
+  }
+  .header__btn-burger {
+    margin-left: 0;
+    width: 25px;
+    height: 18px;
+  }
+  .header__burger-line:first-child {
+    width: 25px;
+    height: 2px;
+    left: 51%;
+  }
+  .header__burger-line:nth-child(2) {
+    width: 16px;
+    height: 2px;
+    left: 36%;
+  }
+  .header__burger-line:last-child {
+    width: 10px;
+    height: 2px;
+    left: 25%;
+  }
+  .open-burger .header__burger-line:last-child {   
+    width: 25px;      
+  } 
+  .header__nav_top {
+    top: 45px;
+    padding: 16px 16px;
+    opacity: 0.9;
+  }
+  .header__item-top {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  .header__item-top {
+    margin-bottom: 14px;
+  }
+  .header__link-enter {
+    width: 115px;
+    height: 40px;
+    padding: 9.5px 30px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .header__link-icon svg {
+    width: 9px;
+    height: 9px;
+  }
+  .header__search-wrap {
+    top: 0px;
+    height: 42px;
+    margin-right: 0;
+  }
+  .header__btn-search {
+    margin-right: 0px;
+    padding-top: 8px;
+  }
+  .header__btn-search svg {
+    width: 18px;
+    height: 18px;
+  }
+  .header__form-search {
+    width: 275px;
+  }
+  .header__input-search::placeholder {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .header__closed-line {
+    width: 18px;
+    height: 2px;
+  }
+  .enter-modal {
+    width: 290px;
+    height: 470px;
+  } 
+  .enter-modal__subtitle {    
+    margin-top: 5px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .enter-modal__text {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .enter-modal__link {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .enter-modal__input-login, 
+  .enter-modal__input-password {
+    width: 240px;  
+    height: 45px;  
+    padding-bottom: 2px;
+    font-size: 12px;
+  }
+  .enter-modal__input-login::placeholder,
+  .enter-modal__input-password::placeholder {    
+    font-size: 12px;
+    line-height: 12px;    
+  }
+  .enter-modal__btn-form {       
+    width: 145px;
+    height: 45px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .enter-modal__social-text {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .enter-modal__social-link svg {
+    width: 25px;
+    height: 25px;
+  }
+  .mySwiper-1 {
+    height: 355px;
+  }
+  .swiper-slide-1 {
+    background-image: url(../img/hero/hero-320-1.jpg);
+  }
+  .swiper-slide-2 {
+    background-image: url(../img/hero/hero-320-2.jpg);
+  }
+  .swiper-slide-3 {
+    background-image: url(../img/hero/hero-320-3.jpg);
+  } 
+  .hero__content {   
+    top: 75px;
+  }
+  .hero__title {
+    width: 258px;
+    margin-bottom: 2px;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+  }
+  .hero__desc {
+    width: 247px;
+    margin-bottom: 41px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+  .hero__link {
+    padding: 9px 16px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+  .about__container {
+    padding: 50px 16px 41px 14px;
+  }
+  .about__title {    
+    margin-bottom: 12px;
+    font-size: 28px;
+    line-height: 38px;    
+  }  
+  .about__desc {    
+    font-size: 14px;
+    line-height: 28px;    
+  }
+  .galery {
+    background-image: url("../img/galery/bgi-320.jpg");
+  }
+  .galery__container {
+    padding: 50px 15px 50px 14px;
+  }
+  .galery__wrap-chose {
+    width: 100%;
+  }
+  .galery__title {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 12px;
+  }
+  .galery__select-name {
+    margin-bottom: 5px;
+  }
+  .choices {
+    margin-bottom: 30px;
+  }
+  .galery__wrap-swiper {
+    padding-top: 30px;
+    padding-bottom: 51px;
+    margin: 0 auto;
+    max-width: 290px;
+  }
+  .mySwiper-2 {
+    height: 367px;
+  }
+  .galery__picture-link {
+    right: 0px;
+    bottom: 50px;
+    left: 0px;
+  }
+  .galery__picture-link:hover {  
+    top: 0px;    
+  }
+  .galery__picture-link:active {
+    top: 0px;    
+  }
+  .swiper-button-prev {
+    top: 432px;
+    left: 81px;
+  }
+  .swiper-pagination {
+    left: 119px;
+    top: 418px;
+  }
+  .swiper-button-next {
+    top: 432px;
+    left: 181px;
+  }
+  .galery-modal {
+    width: 290px;
+    height: 600px;
+  }
+  .galery-modal__container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .galery-modal__picture {
+    height: 200px;
+  }
+  .galery-modal__content {
+    width: 100%;
+    padding: 17px 18px;
+  }
+  .galery-modal__title {
+    margin-bottom: 2px;
+  }
+  .galery-modal__span {
+    margin-bottom: 12px;
+  }
+  .galery-modal__btn-close {    
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+  }  
+  .catalog__container {
+    padding: 50px 15px;
+    padding-bottom: 72px;
+  }
+  .catalog__title {
+    margin-bottom: 12px;
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .catalog__desc {
+    display: none;
+  }
+  .ui-accordion .ui-accordion-header {
+    padding-top: 1px;
+  }
+  .catalog__accordion-btn {
+    min-height: 73px;
+  }
+  .catalog__accordion-title {
+    font-size: 18px;
+  }
+  .catalog__accordion-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+  .catalog__list-accordion {
+    margin-bottom: 51px;
+  }
+  .catalog__accordion-content {
+    grid-template-columns: 100%;
+  } 
+  .catalog__artist-btn_vekkietta {
+    grid-column: 1;
+    grid-row: 10;
+  }  
+  .catalog__artist-btn_verrorio {
+    grid-column: 1;
+    grid-row: 11;
+  }
+  .catalog__artist-btn_girlandallo {
+    grid-column: 1;
+    grid-row: 12;
+  }
+  .catalog__artist-btn_gozzoli {
+    grid-column: 1;
+    grid-row: 13;
+  }
+  .catalog__artist-btn_granacci {
+    grid-column: 1;
+    grid-row: 14;
+  }
+  .catalog__artist-btn_cekko {
+    grid-column: 1;
+    grid-row: 15;
+  }  
+  .catalog__artist-btn_udine {
+    grid-column: 1;
+    grid-row: 16;
+  }
+  .catalog__artist-btn_paolo {
+    grid-column: 1;
+    grid-row: 17;
+  }  
+  .catalog__artist-btn_giorgione {
+    grid-column: 1;
+    grid-row: 18;
+  }
+  .catalog__artist-btn_parentino {
+    grid-row: 19;
+  }
+  .catalog__artist-btn_pesellino {
+    grid-column: 1;
+    grid-row: 20;
+  }
+  .catalog__artist-btn_perugino {
+    grid-row: 21;
+  }
+  .catalog__artist-btn_peruzzi {
+    grid-column: 1;
+    grid-row: 22;
+  }
+  .catalog__artist-btn_pisanello {
+    grid-row: 23;
+  }
+  .catalog__artist-btn_pinturikkio {
+    grid-column: 1;
+    grid-row: 24;
+  }
+  .ui-accordion .ui-accordion-content {
+    padding: 20px 0;
+  } 
+  .catalog__title-empty {
+    font-size: 18px;
+  } 
+  .catalog__picture-empty {
+    height: 118px;
+    width: 79px;
+    margin: 7px;
+    outline-offset: 6px;
+  }
+  .catalog__content-empty {    
+    margin: 0;
+    margin-left: 20px;
+  }
+  .catalog__desc-empty {
+    width: 175px;
+  }
+  .catalog__list-artist {
+    min-height: 760px;
+  }
+  .catalog__subtitle {
+    margin-bottom: 5px;
+  }
+  .catalog__span {
+    letter-spacing: 0.5px;
+  }
+  .catalog__text {
+    padding-top: 13px;
+    width: 99%;
+  }
+  .events__container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 29px;
+  }
+  .events__title {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 11px;
+  }
+  .events__swiper {    
+    margin: 0 auto;
+    max-width: 290px;
+  }
+  .mySwiper-3 {
+    height: 735px;
+  }
+  .events__article {
+    padding-top: 199px;
+  }
+  .events__image {
+    width: 100%;
+  }
+  .events__wrap {
+    min-height: 483px;
+    padding-left: 23px;
+    padding-right: 16px;
+    padding-bottom: 47px;
+  }
+  .events__desc {
+    margin-bottom: 10px;
+  }
+  .events__desc_5 {
+    width: 195px;
+  }
+  .events__subtitle {
+    width: 104%;
+    font-size: 24px;
+    line-height: 33px;
+  }
+  .events__text {
+    line-height: 32px;
+  }
+  .events__wrapper-link {
+    padding-left: 6px;
+  } 
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    margin-bottom: 37px;
+  }
+  .events__link {
+    padding-bottom: 3px;
+  }
+  .projects__container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 51px;
+  }
+  .projects__title {
+    margin-bottom: 12px;
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .projects__text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .projects__subtitle {
+    margin-bottom: 8px;
+    font-size: 18px;
+  } 
+    .projects__swiper {
+    margin: 0 auto;
+    max-width: 290px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .contacts {
+    border-top: none;
+  }
+  .contacts__container {
+    padding: 0 15px 20px 14px;
+  } 
+  .contacts__desc-address {
+    line-height: 30px;
+  }
+  .contacts__input-name,
+  .contacts__input-phone {
+    height: 40px;
+  }
+  .contacts__btn {
+    padding: 8px 8px;
+  }
+  .contacts__form-name {
+    margin-top: 3px;
+  }
+  .contacts__form-phone {
+    margin-bottom: 20px;
+  }
+  .contacts__btn {
+    width: 44%;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .contacts__wrap-contact {
+    padding-top: 24px;
+  }
+  .contacts__subtitle {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.4px;
+  }
+  .contacts__wrapper-social {
+    padding-top: 10px;
+  }
+  .contacts__link svg {
+    width: 50px;
+    height: 50px;
+  }
+  .contacts__thanks-thank,
+  .contacts__thanks-text {
+    font-size: 15px;
+    line-height: 7px;
+  }
+  .contacts__thanks-wrap svg  {
+    width: 25px;
+    height: 25px;
+  }
+}
+
