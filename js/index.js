@@ -11,7 +11,7 @@ menuBurgerLink.forEach(function (el) {
   el.addEventListener("click", function () {
     header.classList.remove("open-burger");
   });
-});
+}); 
 
 //menu-serach
 let searchBtn = document.querySelector(".header__btn-search");
@@ -98,7 +98,7 @@ var swiper = new Swiper(".mySwiper-1", {
 //scrollbar
 document.querySelectorAll(".dropdown__simplebar").forEach((dropdown) => {
   new SimpleBar(dropdown, {
-    autoHide: false, //чтобы изначально ползунок был виден    
+    autoHide: false, //чтобы изначально ползунок был виден
     scrollbarMaxSize: 28, //с помощью этого значения можно управлять высотой ползунка
   });
 });
@@ -347,12 +347,12 @@ validation2
       errorMessage: "Недопустимый формат",
     }, // В имени используются латиница, кириллица
   ])
-  .addField('.contacts__input-phone', [
+  .addField(".contacts__input-phone", [
     {
-      rule: 'required',
-      errorMessage: 'Введите телефон',
+      rule: "required",
+      errorMessage: "Введите телефон",
     },
-  ])  
+  ])
   .onSuccess((event) => {
     console.log("Validation passes and form submitted", event);
 
@@ -377,46 +377,49 @@ validation2
     //очищаем форму после отправки
     event.target.reset();
   });
-    //Убираем окно благодарности по клику вне элемента
-  const tanks = document.querySelector('.contacts__thanks-wrap'); 
-  document.addEventListener( 'click', (e) => {
-    const opentanks = e.composedPath().includes(tanks);   
-    if ( ! opentanks ) {
-      tanks.classList.remove('open-tanks'); // скрываем элемент т.к. клик был за его пределами
-    }
-  });
+//Убираем окно благодарности по клику вне элемента
+const tanks = document.querySelector(".contacts__thanks-wrap");
+document.addEventListener("click", (e) => {
+  const opentanks = e.composedPath().includes(tanks);
+  if (!opentanks) {
+    tanks.classList.remove("open-tanks"); // скрываем элемент т.к. клик был за его пределами
+  }
+});
 
 //map
 
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-    ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        var myMap = new ymaps.Map("map", {
-          // Координаты центра карты (совпадает или отличается от нашего геообъекта). Порядок по умолчанию: «широта, долгота». 
-          center: [55.75846806898367,37.60108849999989],
-          // Уровень масштабирования. Допустимые значения: от 0 (весь мир) до 19.
-          zoom: 14,
-        }); 
-        // Создание геообъекта с типом точка (метка).
-        var myGeoObject = new ymaps.GeoObject({
-          geometry: {
-            type: "Point", // тип геометрии - точка
-            coordinates: [55.75846806898367,37.60108849999989], // координаты точки
-          },
-        });
-         // Вспомогательная переменная, которую можно использовать вместо GeoObject c типом геометрии «Point» (см. предыдущий пример) - можно добавлять свои метки:
-          var myPlacemark = new ymaps.Placemark([55.75846806898367,37.60108849999989], {}, {
-          iconLayout: 'default#image',
-          iconImageHref: 'img/svg/map-icon.svg', // Путь до нашей картинки из index.html
-          iconImageSize: [20, 20], // Размер по ширине и высоте
-          iconImageOffset: [1, 1]  // Смещение левого верхнего угла иконки относительно её «ножки» (точки привязки).
-        });
-        // Размещение геообъекта на карте.
-        myMap.geoObjects.add(myPlacemark);
+// Функция ymaps.ready() будет вызвана, когда
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+ymaps.ready(init);
+function init() {
+  // Создание карты.
+  var myMap = new ymaps.Map("map", {
+    // Координаты центра карты (совпадает или отличается от нашего геообъекта). Порядок по умолчанию: «широта, долгота».
+    center: [55.75846806898367, 37.60108849999989],
+    // Уровень масштабирования. Допустимые значения: от 0 (весь мир) до 19.
+    zoom: 14,
+  });
+  // Создание геообъекта с типом точка (метка).
+  var myGeoObject = new ymaps.GeoObject({
+    geometry: {
+      type: "Point", // тип геометрии - точка
+      coordinates: [55.75846806898367, 37.60108849999989], // координаты точки
+    },
+  });
+  // Вспомогательная переменная, которую можно использовать вместо GeoObject c типом геометрии «Point» (см. предыдущий пример) - можно добавлять свои метки:
+  var myPlacemark = new ymaps.Placemark(
+    [55.75846806898367, 37.60108849999989],
+    {},
+    {
+      iconLayout: "default#image",
+      iconImageHref: "img/svg/map-icon.svg", // Путь до нашей картинки из index.html
+      iconImageSize: [20, 20], // Размер по ширине и высоте
+      iconImageOffset: [1, 1], // Смещение левого верхнего угла иконки относительно её «ножки» (точки привязки).
     }
-
+  );
+  // Размещение геообъекта на карте.
+  myMap.geoObjects.add(myPlacemark);
+}
 
 // Кнопка вверх
 

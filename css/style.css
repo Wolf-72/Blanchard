@@ -2442,7 +2442,7 @@ label {
 /* map */
 .contacts__map {
   width: 100%;
-  height: 699px;
+  height: 698px;
 }
 
 /* Меняем стили или удаляем объекты с карты по части названия их класса */
@@ -2455,7 +2455,7 @@ label {
   display: none;
 } /* Убираем копирайт */
 
-[class*="search"] {
+.ymaps-2-1-79-searchbox {
   display: none;
 } /* Убираем поисковую строку */
 
@@ -2495,7 +2495,7 @@ ymaps[title="Определить ваше местоположение"] {
 .ymaps-2-1-79-zoom__plus {
     top: 150px!important;  
     border-bottom-left-radius: 0px!important;
-    border-bottom-right-radius: 0px!important; 
+    border-bottom-right-radius: 0px!important;   
 } /* Сдвигаем кнопку зума плюс по вертикали и выпрямляем нижние углы */
 
 .ymaps-2-1-79-zoom__minus {
